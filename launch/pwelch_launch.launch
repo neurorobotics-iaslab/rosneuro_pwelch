@@ -1,0 +1,20 @@
+<launch>	
+
+    <!--Arguments for pwelch node-->
+	<arg name="psd_wlength"   default='256'/>
+    <arg name="psd_novl"      default='128'/>
+    <arg name="psd_dolog"     default='1'/>
+    <arg name="wtype"         default='2'/>
+    <arg name="sampling_freq" default='512'/>
+    <arg name="size"          default='512'/>
+
+    <!--Pwelch node-->
+    <rosparam command="load" file="$(find rosneuro_pwelch)/launch/ringbuffer.yaml"/>
+	<node name="pwelch" pkg="rosneuro_pwelch" type="pwelch_node" output="screen">
+		<param name="~psd_wlength"    value="$(arg psd_wlength)"/>
+        <param name="~psd_novl"       value="$(arg psd_novl)"/>
+        <param name="~psd_dolog"      value="$(arg psd_dolog)"/>
+        <param name="~wtype"          value="$(arg wtype)"/>
+        <param name="~sampling_freq"  value="$(arg sampling_freq)"/>
+	</node>
+</launch>

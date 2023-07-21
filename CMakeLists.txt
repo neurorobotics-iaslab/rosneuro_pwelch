@@ -1,0 +1,49 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(rosneuro_pwelch)
+
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  rosneuro_filters_hann
+  rosneuro_filters_hamming
+  rosneuro_filters
+  rosneuro_filters_flattop
+  rosneuro_filters_blackman
+  rosneuro_buffers_ringbuffer
+  Eigen3
+)
+
+catkin_package(
+  INCLUDE_DIRS include
+  LIBRARIES 
+  ${PROJECT_NAME}
+	
+  CATKIN_DEPENDS
+  	roscpp
+	  roslib
+	  std_msgs
+	  rosneuro_filters
+    rosneuro_filters_hann
+    rosneuro_filters_hamming
+    rosneuro_filters_flattop
+    rosneuro_filters_blackman
+    rosneuro_buffers_ringbuffer
+  DEPENDS
+)
+include_directories(
+  include
+  ${catkin_INCLUDE_DIRS}
+  ${EIGEN3_INCLUDE_DIRS}
+)
+
+add_library(${PROJECT_NAME} src/Pwelch.cpp)
+target_link_libraries(${PROJECT_NAME} ${Eigen3_LIBRARIES} 
+									  ${catkin_LIBRARIES}
+)
+
+
+add_executable(test_pwelch test/test_pwelch.cpp)
+target_link_libraries(test_pwelch ${catkin_LIBRARIES} fftw3)
+
+add_executable(pwelch_node src/pwelch_node.cpp)
+target_link_libraries(pwelch_node ${catkin_LIBRARIES} fftw3)

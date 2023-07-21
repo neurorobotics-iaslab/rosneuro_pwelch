@@ -1,0 +1,9 @@
+<launch>	
+	<arg name="datapath"   default="$(find rosneuro_pwelch)"/>
+
+	<rosparam command="load" file="$(find rosneuro_pwelch)/test/ringbuffer.yaml"/>
+	<node name="test_pwelch" pkg="rosneuro_pwelch" type="test_pwelch" output="screen">
+		<rosparam param="datapath"   subst_value="True">$(arg datapath)</rosparam>
+	
+	</node>
+</launch>

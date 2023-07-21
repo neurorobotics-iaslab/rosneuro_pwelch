@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>rosneuro_pwelch</name>
+  <version>0.0.0</version>
+  <description>The rosneuro_pwelch package</description>
+
+  <maintainer email="paolo@todo.todo">paolo</maintainer>
+
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <exec_depend>roscpp</exec_depend>
+  <depend>rosneuro_filters</depend>
+  <depend>rosneuro_filters_hann</depend> 
+  <depend>rosneuro_filters_hamming</depend> 
+  <depend>rosneuro_filters_flattop</depend> 
+  <depend>rosneuro_filters_blackman</depend> 
+  <depend>rosneuro_buffers_ringbuffer</depend> 
+  <depend>roslib</depend> 
+  <depend>std_msgs</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+
+  </export>
+</package>
