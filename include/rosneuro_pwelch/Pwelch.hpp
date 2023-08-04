@@ -10,11 +10,11 @@
 #include <ros/ros.h>
 #include <rosneuro_msgs/NeuroFrame.h>
 
-#include "rosneuro_filters_hann/Hann.hpp"
-#include "rosneuro_filters_hamming/Hamming.hpp"
-#include "rosneuro_filters/Window.hpp"
-#include "rosneuro_filters_blackman/Blackman.hpp"
-#include "rosneuro_filters_flattop/Flattop.hpp"
+#include "rosneuro_windows_hann/Hann.hpp"
+#include "rosneuro_windows_hamming/Hamming.hpp"
+#include "rosneuro_windows/Window.hpp"
+#include "rosneuro_windows_blackman/Blackman.hpp"
+#include "rosneuro_windows_flattop/Flattop.hpp"
 
 namespace rosneuro {
 

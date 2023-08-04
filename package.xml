@@ -15,11 +15,12 @@
   <build_export_depend>roscpp</build_export_depend>
   <exec_depend>roscpp</exec_depend>
   <depend>rosneuro_filters</depend>
-  <depend>rosneuro_filters_hann</depend> 
-  <depend>rosneuro_filters_hamming</depend> 
-  <depend>rosneuro_filters_flattop</depend> 
-  <depend>rosneuro_filters_blackman</depend> 
-  <depend>rosneuro_buffers_ringbuffer</depend> 
+  <depend>rosneuro_windows</depend>
+  <depend>rosneuro_windows_hann</depend>
+  <depend>rosneuro_windows_hamming</depend>
+  <depend>rosneuro_windows_flattop</depend>
+  <depend>rosneuro_windows_blackman</depend>
+  <depend>rosneuro_buffers_ringbuffer</depend>  
   <depend>roslib</depend> 
   <depend>std_msgs</depend>
 

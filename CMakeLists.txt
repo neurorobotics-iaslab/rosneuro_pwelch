@@ -4,11 +4,12 @@ project(rosneuro_pwelch)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
-  rosneuro_filters_hann
-  rosneuro_filters_hamming
+  rosneuro_windows
   rosneuro_filters
-  rosneuro_filters_flattop
-  rosneuro_filters_blackman
+  rosneuro_windows_flattop
+  rosneuro_windows_blackman
+  rosneuro_windows_hann
+  rosneuro_windows_hamming
   rosneuro_buffers_ringbuffer
   Eigen3
 )
@@ -23,10 +24,11 @@ catkin_package(
 	  roslib
 	  std_msgs
 	  rosneuro_filters
-    rosneuro_filters_hann
-    rosneuro_filters_hamming
-    rosneuro_filters_flattop
-    rosneuro_filters_blackman
+    rosneuro_windows_flattop
+    rosneuro_windows_blackman
+    rosneuro_windows_hann
+    rosneuro_windows_hamming
+    rosneuro_windows
     rosneuro_buffers_ringbuffer
   DEPENDS
 )
