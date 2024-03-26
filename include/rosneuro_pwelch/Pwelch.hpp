@@ -9,7 +9,7 @@
 #include <fftw3.h>
 #include <ros/ros.h>
 #include <rosneuro_msgs/NeuroFrame.h>
-
+#include <gtest/gtest_prod.h>
 #include "rosneuro_windows_hann/Hann.hpp"
 #include "rosneuro_windows_hamming/Hamming.hpp"
 #include "rosneuro_windows/Window.hpp"
@@ -55,6 +55,11 @@ class Pwelch {
 		DynamicMatrix<T>  psd_;
 		bool 		isset_;
 		bool        psd_configured_;
+
+        FRIEND_TEST(TestPwelchSuite, Constructor);
+        FRIEND_TEST(TestPwelchSuite, Configure);
+        FRIEND_TEST(TestPwelchSuite, Isset);
+        FRIEND_TEST(TestPwelchSuite, Apply);
 };
 
 template <typename T>

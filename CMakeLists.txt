@@ -38,6 +38,14 @@ include_directories(
   ${EIGEN3_INCLUDE_DIRS}
 )
 
+catkin_add_gtest(TestPwelch test/TestPwelch.cpp)
+target_link_libraries(TestPwelch ${GTEST_BOTH_LIBRARIES} pthread gmock fftw3)
+target_link_libraries(TestPwelch ${PROJECT_NAME} ${catkin_LIBRARIES})
+
+catkin_add_gtest(TestPwelchNode test/TestPwelchNode.cpp)
+target_link_libraries(TestPwelchNode ${GTEST_BOTH_LIBRARIES} pthread gmock fftw3)
+target_link_libraries(TestPwelchNode ${PROJECT_NAME} ${catkin_LIBRARIES})
+
 add_library(${PROJECT_NAME} src/Pwelch.cpp)
 target_link_libraries(${PROJECT_NAME} ${Eigen3_LIBRARIES} 
 									  ${catkin_LIBRARIES}

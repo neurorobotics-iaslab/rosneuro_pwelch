@@ -5,6 +5,7 @@
 #include <rosneuro_msgs/NeuroFrame.h>
 #include <rosneuro_pwelch/Pwelch.h>
 #include <rosneuro_buffers_ringbuffer/RingBuffer.h>
+#include <gtest/gtest_prod.h>
 
 namespace rosneuro{
 
@@ -34,6 +35,11 @@ class PwelchNode{
 		Pwelch<T> * pwelch_;
 		Buffer<T> * buffer_;
 		rosneuro_msgs::NeuroFrame neuromsg_;
+
+        FRIEND_TEST(TestPwelchNodeSuite, Constructor);
+        FRIEND_TEST(TestPwelchNodeSuite, Configure);
+        FRIEND_TEST(TestPwelchNodeSuite, WrongConfigure);
+        FRIEND_TEST(TestPwelchNodeSuite, OnReceivedNeuroData);
 };
 
 template <typename T>
