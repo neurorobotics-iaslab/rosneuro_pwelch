@@ -52,8 +52,8 @@ target_link_libraries(${PROJECT_NAME} ${Eigen3_LIBRARIES}
 )
 
 
-add_executable(test_pwelch test/test_pwelch.cpp)
+add_executable(test_pwelch example/test_pwelch.cpp)
 target_link_libraries(test_pwelch ${catkin_LIBRARIES} fftw3)
 
-add_executable(pwelch_node src/pwelch_node.cpp)
+add_executable(pwelch_node example/run.cpp)
 target_link_libraries(pwelch_node ${catkin_LIBRARIES} fftw3)
