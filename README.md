@@ -11,3 +11,6 @@ The parameters needed to configure properly Pwelch are:
 
 ## Usage
 The package required as input a dynamicmatrix (which is a Eigen::matrixXd) in order to apply the pwlech algorithm, it must be *[samples x channels]*. Additionally, it returns a matrix with *[nfreqs x channels]*.
+
+## Installer
+To run you must have the fftw3 library

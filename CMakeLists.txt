@@ -12,6 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   rosneuro_windows_hamming
   rosneuro_buffers_ringbuffer
   Eigen3
+  rosneuro_msgs
 )
 
 catkin_package(
@@ -39,8 +40,10 @@ include_directories(
 )
 
 add_library(${PROJECT_NAME} src/Pwelch.cpp)
-target_link_libraries(${PROJECT_NAME} ${Eigen3_LIBRARIES} 
-									  ${catkin_LIBRARIES}
+target_link_libraries(${PROJECT_NAME} 
+	${Eigen3_LIBRARIES} 
+	${catkin_LIBRARIES}
+	fftw3
 )
 
 
