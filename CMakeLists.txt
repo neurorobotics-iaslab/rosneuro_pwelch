@@ -4,6 +4,7 @@ project(rosneuro_pwelch)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  rosneuro_msgs
   rosneuro_windows
   rosneuro_filters
   rosneuro_windows_flattop
