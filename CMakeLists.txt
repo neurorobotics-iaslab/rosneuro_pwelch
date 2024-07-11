@@ -4,6 +4,7 @@ project(rosneuro_pwelch)
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp
+  rosneuro_msgs
   rosneuro_windows
   rosneuro_filters
   rosneuro_windows_flattop
@@ -39,6 +40,14 @@ include_directories(
   ${EIGEN3_INCLUDE_DIRS}
 )
 
+catkin_add_gtest(TestPwelch test/TestPwelch.cpp)
+target_link_libraries(TestPwelch ${GTEST_BOTH_LIBRARIES} pthread gmock fftw3)
+target_link_libraries(TestPwelch ${PROJECT_NAME} ${catkin_LIBRARIES})
+
+catkin_add_gtest(TestPwelchNode test/TestPwelchNode.cpp)
+target_link_libraries(TestPwelchNode ${GTEST_BOTH_LIBRARIES} pthread gmock fftw3)
+target_link_libraries(TestPwelchNode ${PROJECT_NAME} ${catkin_LIBRARIES})
+
 add_library(${PROJECT_NAME} src/Pwelch.cpp)
 target_link_libraries(${PROJECT_NAME} 
 	${Eigen3_LIBRARIES} 
@@ -47,8 +56,8 @@ target_link_libraries(${PROJECT_NAME}
 )
 
 
-add_executable(test_pwelch test/test_pwelch.cpp)
+add_executable(test_pwelch example/test_pwelch.cpp)
 target_link_libraries(test_pwelch ${catkin_LIBRARIES} fftw3)
 
-add_executable(pwelch_node src/pwelch_node.cpp)
+add_executable(pwelch_node example/run.cpp)
 target_link_libraries(pwelch_node ${catkin_LIBRARIES} fftw3)
